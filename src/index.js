@@ -15,7 +15,8 @@ export default function deferComponentRender (WrappedComponent) {
     }
 
     render () {
-      return this.state.shouldRender ? <WrappedComponent {...this.props} /> : null
+        const { loading, ...otherProps } = this.props;
+      return this.state.shouldRender ? <WrappedComponent {...otherProps} /> : loading || null
     }
   }
 
