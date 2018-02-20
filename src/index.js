@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import raf from 'raf'
+// import raf from 'raf'
 import hoistNonReactStatic from 'hoist-non-react-statics'
 
 /**
@@ -11,7 +11,7 @@ export default function deferComponentRender (WrappedComponent, WaitingComponent
     state = { shouldRender: false }
 
     componentDidMount () {
-      raf(() => raf(() => this.setState({ shouldRender: true })))
+        window.requestAnimationFrame(() => window.requestAnimationFrame(() => this.setState({ shouldRender: true })))
     }
 
     render () {
