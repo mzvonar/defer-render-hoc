@@ -1,8 +1,9 @@
 {
   "name": "defer-render-hoc",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "React defer render HOC",
   "main": "./dist/defer-render-hoc.min.js",
+  "module": "./src/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/hanford/defer-render-hoc.git"
