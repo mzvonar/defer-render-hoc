@@ -6,7 +6,7 @@ import hoistNonReactStatic from 'hoist-non-react-statics'
  * Allows two animation frames to complete to allow other components to update
  * and re-render before mounting and rendering an expensive `WrappedComponent`.
  */
-export default function deferComponentRender (WrappedComponent) {
+export default function deferComponentRender (WrappedComponent, WaitingComponent = null) {
   class DeferredRenderWrapper extends PureComponent {
     state = { shouldRender: false }
 
@@ -15,8 +15,7 @@ export default function deferComponentRender (WrappedComponent) {
     }
 
     render () {
-        const { loading, ...otherProps } = this.props;
-      return this.state.shouldRender ? <WrappedComponent {...otherProps} /> : loading || null
+      return this.state.shouldRender ? <WrappedComponent {...this.props} /> : WaitingComponent
     }
   }
 
