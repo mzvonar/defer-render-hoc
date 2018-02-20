@@ -1,15 +1,14 @@
 {
-  "name": "defer-render-hoc",
+  "name": "@mzvonar/defer-render-hoc",
   "version": "0.3.1",
   "description": "React defer render HOC",
   "main": "./dist/defer-render-hoc.min.js",
-  "module": "./src/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hanford/defer-render-hoc.git"
+    "url": "https://github.com/mzvonar/defer-render-hoc.git"
   },
-  "homepage": "https://github.com/hanford/defer-render-hoc",
-  "bugs": "https://github.com/hanford/defer-render-hoc/issues",
+  "homepage": "https://github.com/mzvonar/defer-render-hoc.git",
+  "bugs": "https://github.com/mzvonar/defer-render-hoc.git/issues",
   "scripts": {
     "build": "webpack -p",
     "prepare": "npm run build",
