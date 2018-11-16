@@ -11,7 +11,11 @@ export default function deferComponentRender (WrappedComponent, WaitingComponent
     state = { shouldRender: false }
 
     componentDidMount () {
-      raf(() => raf(() => this.setState({ shouldRender: true })))
+      raf(() => raf(() => !this.unmounted && this.setState({ shouldRender: true })));
+    }
+
+    componentWillUnmount() {
+      this.unmounted = true;
     }
 
     render () {
